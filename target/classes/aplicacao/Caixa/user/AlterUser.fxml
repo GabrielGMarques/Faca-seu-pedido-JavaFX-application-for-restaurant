@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.control.PasswordField?>
+
+
+<BorderPane styleClass="pane" prefHeight="411.0" prefWidth="451.0"
+	xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8"
+	fx:controller="aplicacao.controllers.ControllerAlterUser">
+	<top>
+		<GridPane alignment="CENTER_RIGHT" prefHeight="131.0"
+			prefWidth="451.0" BorderPane.alignment="CENTER_RIGHT">
+			<columnConstraints>
+				<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"
+					prefWidth="100.0" />
+				<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"
+					prefWidth="100.0" />
+			</columnConstraints>
+			<rowConstraints>
+				<RowConstraints minHeight="10.0" prefHeight="30.0"
+					vgrow="SOMETIMES" />
+				<RowConstraints minHeight="10.0" prefHeight="30.0"
+					vgrow="SOMETIMES" />
+				<RowConstraints minHeight="10.0" prefHeight="30.0"
+					vgrow="SOMETIMES" />
+				<RowConstraints minHeight="10.0" prefHeight="30.0"
+					vgrow="SOMETIMES" />
+			</rowConstraints>
+			<children>
+				<Label text="Nome" />
+				<Label text="Senha" GridPane.rowIndex="1" />
+				<Label text="Confirmar Senha" GridPane.rowIndex="2" />
+				<Button fx:id="btnAdcionar" mnemonicParsing="false"
+					text="Adicionar Permisâo" GridPane.columnIndex="1"
+					GridPane.rowIndex="3" onAction="#onAdcionar" />
+				<TextField fx:id="textNome" GridPane.columnIndex="1" />
+				<PasswordField fx:id="textSenha" GridPane.columnIndex="1"
+					GridPane.rowIndex="1" />
+				<PasswordField fx:id="textConfirmarSenha"
+					GridPane.columnIndex="1" GridPane.rowIndex="2" />
+			</children>
+		</GridPane>
+	</top>
+	<center>
+		<TableView fx:id="table" prefHeight="200.0" prefWidth="200.0"
+			BorderPane.alignment="CENTER">
+			<columns>
+				<TableColumn prefWidth="100.0" text="Permissões">
+					<cellValueFactory>
+						<PropertyValueFactory property="permissao" />
+					</cellValueFactory>
+				</TableColumn>
+				<TableColumn prefWidth="100.0" text="Nome">
+					<cellValueFactory>
+						<PropertyValueFactory property="name" />
+					</cellValueFactory>
+				</TableColumn>
+			</columns>
+		</TableView>
+	</center>
+	<bottom>
+		<HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0"
+			spacing="10.0" BorderPane.alignment="CENTER">
+			<children>
+				<Button fx:id="btnCancelar" mnemonicParsing="false" text="Cancelar"
+					onAction="#onCancelar" />
+				<Button fx:id="btnSalvar" mnemonicParsing="false" text="Salvar"
+					onAction="#onSalvar" />
+			</children>
+		</HBox>
+	</bottom>
+	<right>
+		<Button fx:id="btnRemover" mnemonicParsing="false" text="remover"
+			BorderPane.alignment="CENTER" onAction="#onRemover" />
+	</right>
+</BorderPane>

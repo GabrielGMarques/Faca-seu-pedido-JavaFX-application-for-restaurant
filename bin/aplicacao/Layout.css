@@ -1,0 +1,31 @@
+#labelPrincipal{
+
+	-fx-font: 16px arial 
+} 
+
+#textPedido{
+
+		-fx-font: 10px arial 
+
+}
+
+.button{
+
+		-fx-font: 10.9px arial;
+		-fx-background-color: #32CD32; 
+
+}
+
+.pane{
+
+		-fx-background-color: #AFEEEE; 
+
+}
+
+
+.comboBox{
+
+		-fx-background-color: #32CD32; 
+
+
+}

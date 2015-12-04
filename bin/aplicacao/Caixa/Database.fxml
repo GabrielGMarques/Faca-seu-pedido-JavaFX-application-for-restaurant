@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane styleClass="pane" prefHeight="319.0" prefWidth="375.0"
+	xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="aplicacao.controllers.ControllerDatabase">
+	<center>
+		<VBox alignment="CENTER" prefHeight="319.0" prefWidth="245.0"
+			spacing="20" BorderPane.alignment="CENTER">
+			<children>
+
+
+				<Button mnemonicParsing="false" prefHeight="25.0" prefWidth="188.0"
+					text="Cadastrar" onAction="#onCadastrar" />
+				<Button mnemonicParsing="false" prefHeight="25.0" prefWidth="188.0"
+					text="Alterar" onAction="#onAlterar" />
+				<Button mnemonicParsing="false" prefHeight="25.0" prefWidth="188.0"
+					text="Deletar" onAction="#onDeletar" />
+				<Button mnemonicParsing="false" prefHeight="25.0" prefWidth="188.0"
+					text="Editar dados do meu restaurante" onAction="#onEditarDadosRestaurante" />
+			</children>
+		</VBox>
+	</center>
+	<top>
+		<Button mnemonicParsing="false" BorderPane.alignment="TOP_LEFT"
+			onAction="#onBack">
+			<graphic>
+				<ImageView fitHeight="36.0" fitWidth="37.0">
+					<image>
+						<Image
+							url="@../../../lib/_imagens/PNG/Outline%20Version/120px/script.png" />
+					</image>
+				</ImageView>
+			</graphic>
+		</Button>
+	</top>
+</BorderPane>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<perimissoes>
+<Administrador>
+<contaAdmin>
+<nome>Gabriel</nome>
+<senha>123</senha>
+</contaAdmin>
+</Administrador>
+<permissoes>
+<permissao2>
+<nome>NomUsuario</nome>
+<senha>senhaUsuario</senha>
+</permissao2>
+<permissao1>
+<nome>NomeUsuario</nome>
+<senha>pass</senha>
+</permissao1>
+</permissoes>
+</perimissoes>

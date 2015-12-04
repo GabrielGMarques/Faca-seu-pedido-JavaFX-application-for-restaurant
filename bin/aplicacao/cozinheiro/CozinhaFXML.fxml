@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.ScrollBar?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+
+<BorderPane prefHeight="360.0" prefWidth="431.0" styleClass="pane"
+	xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="aplicacao.controllers.ControllerCozinha">
+
+	<right>
+		<ScrollBar fx:id="scrollBar" layoutY="700" orientation="VERTICAL"
+			prefHeight="900" />
+
+
+	</right>
+	<center>
+		<TabPane prefHeight="534.0" prefWidth="418.0"
+			tabClosingPolicy="UNAVAILABLE">
+			<tabs>
+				<Tab text="Pedidos">
+					<content>
+						<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0"
+							prefWidth="200.0">
+							<children>
+								<VBox fx:id="tablePedidos" />
+							</children>
+						</AnchorPane>
+					</content>
+
+				</Tab>
+			</tabs>
+		</TabPane>
+	</center>
+	<top>
+		<HBox prefHeight="22.0" prefWidth="431.0" BorderPane.alignment="CENTER">
+			<children>
+
+				<Button alignment="TOP_LEFT" onAction="#onBack">
+					<graphic>
+						<ImageView fitHeight="24.0" fitWidth="45.0"
+							preserveRatio="true" visible="true">
+							<image>
+								<Image
+									url="@../../../lib/_imagens/PNG/Outline%20Version/120px/home.png" />
+							</image>
+						</ImageView>
+					</graphic>
+				</Button>
+			</children>
+		</HBox>
+	</top>
+
+
+
+
+</BorderPane>

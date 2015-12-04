@@ -1,0 +1,10 @@
+#Arquivo de configuracao
+driver=com.mysql.jdbc.Driver
+portaRMI = 9070
+localRMI = localhost
+portaDATABASE = 3030
+localDATABASE = localhost
+numeroMesas = src/resources/NumberOfTables.xml
+urlOfDatabase = jdbc:mysql://localhost:3030/restaurante
+userDatabse= root
+passwordDatabase= JdBC84439879

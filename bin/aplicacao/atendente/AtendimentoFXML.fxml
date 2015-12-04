@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.cell.*?>
+<?import java.lang.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.String?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.ScrollBar?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.TextField?>
+
+<BorderPane prefHeight="369.0" prefWidth="494.0" styleClass="pane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="aplicacao.controllers.ControllerAtendimento">
+
+
+	<top>
+		<HBox prefHeight="41.0" prefWidth="299.0" BorderPane.alignment="CENTER">
+			<children>
+				<!-- Botão para voltar ao menu de pedido -->
+				<Button fx:id="btnVoltar" mnemonicParsing="false" onAction="#onBack">
+					<graphic>
+						<ImageView fitHeight="24.0" fitWidth="45.0" preserveRatio="true" visible="true">
+							<image>
+								<Image url="@../../../lib/_imagens/PNG/Outline%20Version/120px/home.png" />
+							</image>
+						</ImageView>
+					</graphic>
+				</Button>
+			</children>
+
+
+		</HBox>
+	</top>
+	<center>
+		<TabPane fx:id="tabPane" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+			<tabs>
+
+				<Tab fx:id="tabPedido" closable="true" text="Fazer pedido">
+					<content>
+						<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+							<children>
+								<GridPane hgap="3.0" layoutX="3.0" layoutY="4.0" prefHeight="292.0" prefWidth="494.0" vgap="3.0">
+									<columnConstraints>
+										<ColumnConstraints hgrow="SOMETIMES" maxWidth="335.0" minWidth="10.0" prefWidth="335.0" />
+										<ColumnConstraints hgrow="SOMETIMES" maxWidth="138.0" minWidth="10.0" prefWidth="62.0" />
+										<ColumnConstraints hgrow="SOMETIMES" maxWidth="102.0" minWidth="10.0" prefWidth="87.0" />
+									</columnConstraints>
+									<rowConstraints>
+										<RowConstraints maxHeight="166.0" minHeight="10.0" prefHeight="164.0" vgrow="SOMETIMES" />
+										<RowConstraints maxHeight="178.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+										<RowConstraints maxHeight="159.0" minHeight="10.0" prefHeight="92.0" vgrow="SOMETIMES" />
+									</rowConstraints>
+									<children>
+										<Button fx:id="btnItens" alignment="TOP_LEFT" contentDisplay="TOP" mnemonicParsing="false" onAction="#onItens" prefHeight="13.0" prefWidth="63.0" styleClass="button" text="Itens" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+										<Button fx:id="btnConfirmar" alignment="TOP_LEFT" contentDisplay="TOP" mnemonicParsing="false" onAction="#enviarPedido" styleClass="button" text="Inviar pedido" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+										<Label text="Preco" GridPane.columnIndex="1" />
+										<Label fx:id="lblPreco" text="0.0" GridPane.columnIndex="2" />
+										<ComboBox fx:id="comboChoise" prefWidth="150.0" styleClass="comboBox" GridPane.rowIndex="1" />
+										<ComboBox fx:id="comboN_Mesas" prefWidth="150.0" styleClass="comboBox" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+										<TableView fx:id="tablePedido" prefHeight="164.0" prefWidth="301.0">
+											<columns>
+												<TableColumn prefWidth="75.0" text="preco">
+													<cellValueFactory>
+														<PropertyValueFactory property="preco" />
+													</cellValueFactory>
+												</TableColumn>
+												<TableColumn prefWidth="42.0" text="unid">
+													<cellValueFactory>
+														<PropertyValueFactory property="unid" />
+													</cellValueFactory>
+												</TableColumn>
+												<TableColumn prefWidth="127.0" text="nome">
+													<cellValueFactory>
+														<PropertyValueFactory property="nome" />
+													</cellValueFactory>
+												</TableColumn>
+												<TableColumn prefWidth="56.0" text="item 1" />
+												<TableColumn prefWidth="75.0" text="item 2" />
+												<TableColumn prefWidth="75.0" text="item 3" />
+												<TableColumn prefWidth="75.0" text="item 4" />
+											</columns>
+										</TableView>
+									</children>
+								</GridPane>
+							</children>
+						</AnchorPane>
+					</content>
+				</Tab>
+				<Tab fx:id="tabMesa" text="Alterar mesa">
+					<content>
+						<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+							<children>
+								<GridPane hgap="3" layoutX="3.0" layoutY="5.0" prefHeight="290.0" prefWidth="481.0" vgap="3.0">
+									<columnConstraints>
+										<ColumnConstraints hgrow="SOMETIMES" maxWidth="211.0" minWidth="10.0" prefWidth="62.0" />
+										<ColumnConstraints hgrow="SOMETIMES" maxWidth="386.0" minWidth="10.0" prefWidth="370.0" />
+									</columnConstraints>
+									<rowConstraints>
+										<RowConstraints maxHeight="90.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+										<RowConstraints maxHeight="177.0" minHeight="10.0" prefHeight="170.0" vgrow="SOMETIMES" />
+										<RowConstraints maxHeight="161.0" minHeight="10.0" prefHeight="84.0" vgrow="SOMETIMES" />
+									</rowConstraints>
+									<children>
+										<Label text="Mesa" />
+										<Button mnemonicParsing="false" onAction="#onItensMesa" prefHeight="25.0" prefWidth="51.0" styleClass="button" text="Itens" GridPane.rowIndex="2" />
+										<Button fx:id="btnAlteracaoMesa" mnemonicParsing="false" onAction="#enviarPedidoMesa" styleClass="button" text="Pronto" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+										<ComboBox fx:id="comboMesa" prefWidth="150.0" styleClass="comboBox" GridPane.columnIndex="1" />
+										<TableView fx:id="tableMesa" prefHeight="300.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+											<columns>
+												<TableColumn prefWidth="75.0" text="preco">
+													<cellValueFactory>
+														<PropertyValueFactory property="preco" />
+													</cellValueFactory>
+												</TableColumn>
+												<TableColumn prefWidth="42.0" text="unid">
+													<cellValueFactory>
+														<PropertyValueFactory property="unid" />
+													</cellValueFactory>
+												</TableColumn>
+												<TableColumn prefWidth="127.0" text="nome">
+													<cellValueFactory>
+														<PropertyValueFactory property="nome" />
+													</cellValueFactory>
+												</TableColumn>
+												<TableColumn prefWidth="56.0" text="item 1" />
+												<TableColumn prefWidth="75.0" text="item 2" />
+												<TableColumn prefWidth="75.0" text="item 3" />
+												<TableColumn prefWidth="75.0" text="item 4" />
+											</columns>
+										</TableView>
+										<Label fx:id="precoMesa" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="62.0" text="0.0" GridPane.rowIndex="1" />
+									</children>
+								</GridPane>
+							</children>
+						</AnchorPane>
+					</content>
+				</Tab>
+			</tabs>
+		</TabPane>
+	</center>
+
+</BorderPane>

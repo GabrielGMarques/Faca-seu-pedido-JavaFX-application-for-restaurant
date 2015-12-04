@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.ScrollBar?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.PasswordField?>
+
+<BorderPane fx:id="BorderPane" prefHeight="421.0" prefWidth="342.0" styleClass="pane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="aplicacao.controllers.ControllerUser">
+
+	<left>
+
+		<Button fx:id="btnVoltar" alignment="TOP_LEFT" onAction="#onBack" text="Voltar" />
+
+	</left>
+	<center>
+		<GridPane fx:id="interfaceLogin" prefHeight="372.0" prefWidth="342.0" BorderPane.alignment="CENTER">
+			<padding>
+				<Insets left="10" right="10" top="10" />
+			</padding>
+			<columnConstraints>
+				<ColumnConstraints hgrow="SOMETIMES" maxWidth="166.0" minWidth="10.0" prefWidth="36.0" />
+				<ColumnConstraints hgrow="SOMETIMES" maxWidth="310.0" minWidth="10.0" prefWidth="306.0" />
+			</columnConstraints>
+			<rowConstraints>
+				<RowConstraints maxHeight="216.0" minHeight="10.0" prefHeight="54.0" vgrow="SOMETIMES" />
+				<RowConstraints maxHeight="216.0" minHeight="10.0" prefHeight="80.0" vgrow="SOMETIMES" />
+				<RowConstraints maxHeight="270.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
+				<RowConstraints maxHeight="292.0" minHeight="10.0" prefHeight="197.0" vgrow="SOMETIMES" />
+			</rowConstraints>
+			<children>
+				<Label text="Nome" GridPane.rowIndex="1" />
+				<TextField fx:id="txtNome" alignment="TOP_LEFT" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+				<Label text="Senha" GridPane.rowIndex="2" />
+				<PasswordField fx:id="txtSenha" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+				<HBox alignment="TOP_RIGHT" prefHeight="100.0" prefWidth="287.0" spacing="20" GridPane.columnIndex="1" GridPane.rowIndex="3">
+					<children>
+						<Button alignment="TOP_RIGHT" mnemonicParsing="false" onAction="#onBack" text="Cancelar" />
+						<Button fx:id="btnEntrar" alignment="TOP_RIGHT" mnemonicParsing="false" onAction="#onLogin" text="Entrar" />
+					</children>
+				</HBox>
+			</children>
+		</GridPane>
+	</center>
+	<top>
+		<GridPane fx:id="interfaceUser" BorderPane.alignment="CENTER">
+			<columnConstraints>
+				<ColumnConstraints hgrow="SOMETIMES" maxWidth="166.0" minWidth="10.0" prefWidth="142.0" />
+				<ColumnConstraints hgrow="SOMETIMES" maxWidth="211.0" minWidth="10.0" prefWidth="200.0" />
+			</columnConstraints>
+			<rowConstraints>
+				<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+				<RowConstraints maxHeight="32.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+				<RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+			</rowConstraints>
+			<children>
+				<Label fx:id="userName" mnemonicParsing="false" text="nome" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+				<Button fx:id="btnAlterSenha" mnemonicParsing="false" onAction="#onAlterSenha" text="Alterar senha" GridPane.rowIndex="1" />
+				<Button fx:id="btnAlterPermissoes" mnemonicParsing="false" onAction="#onAlterPermissoes" text="Aterar permissões" GridPane.rowIndex="2" />
+				<Label fx:id="isAdmin" text="Admin" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+				<Button fx:id="btnSair" mnemonicParsing="false" onAction="#onSair" text="Sair" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+			</children>
+		</GridPane>
+	</top>
+</BorderPane>

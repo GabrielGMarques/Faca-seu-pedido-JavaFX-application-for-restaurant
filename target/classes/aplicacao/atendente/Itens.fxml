@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+
+
+<BorderPane prefHeight="369.0" prefWidth="455.0" styleClass="pane"
+	xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="aplicacao.controllers.ControllerItensAtendimento">
+	<center>
+		<TabPane prefHeight="269.0" prefWidth="441.0"
+			tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+			<tabs>
+				<Tab fx:id="tabBebidas" text="Bebidas" onSelectionChanged="#onBebdias">
+					<content>
+						<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0"
+							prefWidth="200.0">
+							<children>
+								<VBox fx:id="vboxBebidas" prefHeight="249.0" prefWidth="455.0" />
+							</children>
+						</AnchorPane>
+					</content>
+				</Tab>
+				<Tab fx:id="tabPratosCompostos" text="Pratos Compostos"
+					onSelectionChanged="#onCompostos">
+					<content>
+						<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0"
+							prefWidth="200.0">
+							<children>
+								<VBox fx:id="vboxPratosC" prefHeight="249.0" prefWidth="455.0" />
+							</children>
+						</AnchorPane>
+					</content>
+				</Tab>
+				<Tab fx:id="tabPratosSimples" text="Pratos Simples"
+					onSelectionChanged="#onSimples">
+					<content>
+						<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0"
+							prefWidth="200.0">
+							<children>
+								<VBox fx:id="vboxPratosS" layoutX="-1.0" prefHeight="252.0"
+									prefWidth="455.0" />
+							</children>
+						</AnchorPane>
+					</content>
+				</Tab>
+				<Tab fx:id="tabOutros" text="Outros" onSelectionChanged="#onOutros">
+					<content>
+						<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0"
+							prefWidth="200.0">
+							<children>
+								<VBox fx:id="vboxOutros" layoutX="-1.0" prefHeight="249.0"
+									prefWidth="455.0" />
+							</children>
+						</AnchorPane>
+					</content>
+				</Tab>
+			</tabs>
+		</TabPane>
+	</center>
+	<top>
+		<GridPane prefHeight="129.0" prefWidth="455.0"
+			BorderPane.alignment="CENTER">
+			<columnConstraints>
+				<ColumnConstraints hgrow="SOMETIMES" maxWidth="332.0"
+					minWidth="10.0" prefWidth="332.0" />
+				<ColumnConstraints hgrow="SOMETIMES" maxWidth="219.0"
+					minWidth="10.0" prefWidth="123.0" />
+			</columnConstraints>
+			<rowConstraints>
+				<RowConstraints maxHeight="25.0" minHeight="0.0"
+					prefHeight="0.0" vgrow="SOMETIMES" />
+				<RowConstraints maxHeight="113.0" minHeight="10.0"
+					prefHeight="100.0" vgrow="SOMETIMES" />
+				<RowConstraints maxHeight="29.0" minHeight="1.0"
+					prefHeight="27.0" vgrow="SOMETIMES" />
+			</rowConstraints>
+			<children>
+				<Button mnemonicParsing="false" text="concluir"
+					GridPane.columnIndex="1" GridPane.rowIndex="2" onAction="#onConcluir">
+					<GridPane.margin>
+						<Insets left="10.0" />
+					</GridPane.margin>
+				</Button>
+				<Button alignment="CENTER_RIGHT" contentDisplay="RIGHT"
+					onAction="#onCancel" text="cancelar" textAlignment="JUSTIFY"
+					GridPane.rowIndex="2">
+					<opaqueInsets>
+						<Insets />
+					</opaqueInsets>
+					<GridPane.margin>
+						<Insets left="260.0" />
+					</GridPane.margin>
+				</Button>
+				<VBox prefHeight="200.0" prefWidth="100.0"
+					GridPane.columnIndex="1" GridPane.rowIndex="1">
+					<children>
+						<TextField fx:id="textPreco" disable="true" text="0.0" />
+						<Label alignment="CENTER" contentDisplay="CENTER" text="Preço">
+							<padding>
+								<Insets left="43.0" />
+							</padding>
+						</Label>
+					</children>
+				</VBox>
+				<TableView fx:id="tablePedido" prefHeight="200.0"
+					prefWidth="200.0" GridPane.rowIndex="1">
+					<columns>
+						<TableColumn prefWidth="75.0" text="preco">
+							<cellValueFactory>
+								<PropertyValueFactory property="preco" />
+							</cellValueFactory>
+						</TableColumn>
+						<TableColumn prefWidth="42.0" text="unid">
+							<cellValueFactory>
+								<PropertyValueFactory property="unid" />
+							</cellValueFactory>
+						</TableColumn>
+						<TableColumn prefWidth="127.0" text="nome">
+							<cellValueFactory>
+								<PropertyValueFactory property="nome" />
+							</cellValueFactory>
+						</TableColumn>
+						<TableColumn prefWidth="56.0" text="item 1" />
+						<TableColumn prefWidth="75.0" text="item 2" />
+						<TableColumn prefWidth="75.0" text="item 3" />
+						<TableColumn prefWidth="75.0" text="item 4" />
+					</columns>
+				</TableView>
+			</children>
+		</GridPane>
+	</top>
+	<right>
+		<ScrollBar fx:id="scroll" orientation="VERTICAL"
+			BorderPane.alignment="CENTER" />
+	</right>
+</BorderPane>

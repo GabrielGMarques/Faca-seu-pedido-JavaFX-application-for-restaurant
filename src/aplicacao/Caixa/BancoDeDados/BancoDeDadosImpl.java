@@ -251,25 +251,22 @@ public class BancoDeDadosImpl extends UnicastRemoteObject implements
 		} catch (SQLException e1) {
 			e1.printStackTrace();
 		}
-		try (Statement stmt = conn.createStatement()) {
+		try (PrepareStatement prepare = conn.PrepareStatement("INSERT INTO Itens (nome,preco,descricao,tipo) VALUES(?,?,?,?)")) {
 
 			conn.setAutoCommit(false);
 			// Does the insert in the table of items
-			stmt.executeUpdate("INSERT Itens (nome,preco,descricao,tipo) VALUES('"
-					+ item.getNome()
-					+ "',"
-					+ item.getPreco()
-					+ ",'"
-					+ item.getDescricao()
-					+ "','"
-					+ item.getCategoria().toString() + "')");
+					prepare.setString(1,item.getNome());
+				        prepare.setDouble(2,item.getPreco());
+					prepare.setString(3,item.getDescricao());
+				        prepare.setString(4,item.getCategoria().toString());
+					prepare.execute();
 
-			/*
+			/*t
 			 * Create a result set to get the last id (which is the item that *
 			 * has just been inserted) and insert in the corresponding table
 			 * item the same id
 			 */
-			ResultSet result = stmt.executeQuery("SELECT *from itens");
+			ResultSet result = conn.createStatement().executeQuery("SELECT *from itens");
 			int id = 0;
 			while (result.next()) {
 

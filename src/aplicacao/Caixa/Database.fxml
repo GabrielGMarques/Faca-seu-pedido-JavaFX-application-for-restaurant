@@ -29,7 +29,7 @@
 				<ImageView fitHeight="36.0" fitWidth="37.0">
 					<image>
 						<Image
-							url="@../../../lib/_imagens/PNG/Outline%20Version/120px/script.png" />
+							url="/resources/imagens/script.png" />
 					</image>
 				</ImageView>
 			</graphic>

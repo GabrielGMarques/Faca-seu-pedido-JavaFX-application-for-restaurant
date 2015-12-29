@@ -531,7 +531,7 @@ public class BancoDeDadosImpl extends UnicastRemoteObject implements
 	public List<Mesa> getMesas() throws RemoteException {
 		List<Mesa> lista = new ArrayList<Mesa>();
 
-		// TODO
+		read.lock();
 		try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
 				Statement stmt = conn.createStatement();
 				ResultSet result = stmt.executeQuery("SELECT *FROM mesas")) {

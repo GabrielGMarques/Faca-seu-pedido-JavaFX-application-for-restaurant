@@ -33,7 +33,7 @@ public class BancoDeDadosImpl extends UnicastRemoteObject implements
 	private static Properties config = new Properties();
 	private static final String URL = "jdbc:mysql://localhost:3030/restaurante";
 	private static final String USER = "root";
-	private static final String PASSWORD = "JdBC84439879";
+	private static final String PASSWORD = "pass";
 
 	private ReentrantReadWriteLock rwLock = new ReentrantReadWriteLock();
 	private Lock read = rwLock.readLock();
